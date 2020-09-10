@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/55131/Documents/LTU Kurser/D0017E/Labb 2/main.c
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+math.h
+-
+
