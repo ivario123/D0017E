@@ -38,12 +38,12 @@ void main(){
 #endif
 #if 0
 void main(){
-    int i = 0;
-    printf("Enter the first digit\n Integer > ");
-    scanf("%i",&i);
-    while (i != 0){
-        printf("%i",i%10);
-        i/=10;
+    int digit,right_digit;
+    printf("Enter the first Integer\n Integer > ");
+    scanf("%i",&digit);
+    while (digit != 0){
+        printf("%i",digit%10);
+        digit/=10;
     }
     printf("\n");
 }
@@ -153,16 +153,12 @@ int Strlen(char *Str){
 /// \param Exponent is the exponent of the power of computation
 /// \return returns Base^Exponent no matter if the exponent is positive or negative
 long double Pow(int Base, int Exponent){
-    long double ret = 1;
     if(Exponent==0)
         return 1;
     if(Exponent<0)
-        for(int i = 0; i < -Exponent;++i)
-            ret/=Base;
+        return 1/(Base*Pow(Base,(-Exponent)-1));
     else
-        for(int i = 0; i < Exponent;++i)
-            ret*=Base;
-    return ret;
+        return Base*Pow(Base,Exponent-1);
 }
 
 
@@ -170,13 +166,28 @@ long double Pow(int Base, int Exponent){
 /// \param BaseSize is the size of an A4 Paper
 /// \param Base Probably 2 but this would work for anny relation not just half or double size as long as the relation is an integer
 /// \param Exp Is the size that we want to calculate
-/// \return  Returns the size of an A(Exp) Paper
-long double Calculate(int *BaseSize, int Base, int Exp)
+void Calculate(int *BaseSize, int Base, int Exp)
 {
-    int Size[] = {(int)(BaseSize[0]*Pow(Base,Exp)),(int)(BaseSize[1]*Pow(Base,Exp))};
-    if(Size[0] == 0)
-        return printf("A paper of size A%i is %i*%i^%i by %i*%i^%i mm\n", 4 - Exp, BaseSize[0],Base,Exp,BaseSize[1],Base,Exp);
-    return printf("A paper of size A%i is %i by %i mm\n",4-Exp,Size[0],Size[1]);
+    long double Size[] = {(long double)BaseSize[0],(long double)BaseSize[1]};
+    int index = 1;
+    if(Exp<0)
+        for(int i = 0; i < -Exp;++i) {
+            long double placeholder = Size[0];
+            Size[0] = Size[1]/2;
+            Size[1] = placeholder;
+        }
+    else
+        for(int i = 0; i < Exp;++i) {
+            long double placeholder = Size[1];
+            Size[1] = Size[0]*2;
+            Size[0] = placeholder;
+        }
+
+    //if(Size[0] == 0)
+    //    return printf("A paper of size A%i is %i*%i^%i by %i*%i^%i mm\n", 4 - Exp, BaseSize[0],Base,exp[0],BaseSize[1],Base,exp[1]);
+    long double sizex = Size[0]>(long double)1 ? (int)Size[0] : Size[0];
+    long double sizey = Size[1]>(long double)1 ? (int)Size[1] : Size[1];
+    printf("A paper of size A%i is %g by %g mm\n",4-Exp,sizex,sizey);
 }
 /// Function that checks if a given string is a positive numerical string
 /// \param Str is the string that will be checked
@@ -220,7 +231,7 @@ long Atoi(char *Str,int Constraints){
     }
     return -1;
 }
-/// Main function, will loop indefinitely unless Q is the size argument
+/// Main function, will loop indefinitely
 void main(){
     //loopar så att man kan kolla mer än 1 tal
     while(1){
@@ -229,8 +240,6 @@ void main(){
         printf("--------------------------------------------------\n");
         printf("Which size do you want to calculate?\nA");
         scanf("%s",str);
-        if(str[0]=='Q')
-            return;
         int i = Atoi(str,4);
         if(i!=-1 )
         {
