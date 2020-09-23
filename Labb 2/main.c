@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+//Uppgift 1 a
 #if 0
 int main() {
     while(1){
@@ -11,19 +12,19 @@ int main() {
         printf("Enter the second digit\n Integer > ");
         scanf("%i",&i2);
         if( i1%i2 == 0) {
-            printf("They are dividable\n\n");
+            printf("They are divisible\n\n");
             continue;
         }
-        printf("They are not dividable\n\n");
+        printf("They are not divisible\n\n");
     }
     return 0;
 }
 #endif
+//Uppgift 1 b
 #if 0
 void main(){
     while(1){
-        int i1 = 0;
-        int i2 = 0;
+        int i1,i2;
         printf("Enter the first digit\n Integer > ");
         scanf("%i",&i1);
         printf("Enter the second digit\n Integer > ");
@@ -36,6 +37,7 @@ void main(){
     }
 }
 #endif
+//Uppgift 1 c
 #if 0
 void main(){
     int digit,right_digit;
@@ -48,6 +50,7 @@ void main(){
     printf("\n");
 }
 #endif
+//Uppgift 2 a
 #if 0
 void main(){
     int values[10];
@@ -64,6 +67,7 @@ void main(){
         printf("values[%i] = %i\n",index,values[index]);
 }
 #endif
+//Uppgift 2 b
 #if 0
 void main(){
     float val[10];
@@ -77,32 +81,11 @@ void main(){
     printf("Average is : %f",sum/10);
 }
 #endif
+//Uppgift 3 a
 #if 0
-int Pow(int a, int b){
-    if(b==0)
-        return 1;
-    if(b==1)
-        return a;
-    return a*Pow(a,b-1);
-}
-int Fak(int a){
-    if(a==0)
-        return 1;
-    return a*Fak(a-1);
-}
 
-
-
-float Div(float c, float d) {
-    float sum = c / d;
-    return(sum);
-}
-
-
-void main(){
-    printf("5/2 is %i",Fak(4));
-}
 #endif
+//Uppgift 3 b
 #if 0
 int prime(int a){
     if(a<1)
@@ -126,6 +109,7 @@ void main(){
     }
 }
 #endif
+//Uppgift 3 c
 #if 0
 int arraysum(int arr[],int nel){
     int sum = 0;
@@ -138,13 +122,14 @@ void main(){
     printf("sum of {1,2,3} is %i",arraysum(sum,3));
 }
 #endif
+//Uppgift 4
 #if 1
 /// Function that finds the length of a given string
 /// \param Str is the string we want to know the length of
 /// \return Returns the length of a string, if string is null, it returns 0
 int Strlen(char *Str){
     int len = 0;
-    while (Str[len]!= '\0')
+    while (Str[len] != '\0')
         ++len;
     return len;
 }
@@ -164,12 +149,10 @@ long double Pow(int Base, int Exponent){
 
 /// Function that computes the size of a given Ax size paper
 /// \param BaseSize is the size of an A4 Paper
-/// \param Base Probably 2 but this would work for anny relation not just half or double size as long as the relation is an integer
 /// \param Exp Is the size that we want to calculate
-void Calculate(int *BaseSize, int Base, int Exp)
+void Calculate(int *BaseSize, int Exp)
 {
     long double Size[] = {(long double)BaseSize[0],(long double)BaseSize[1]};
-    int index = 1;
     if(Exp<0)
         for(int i = 0; i < -Exp;++i) {
             long double placeholder = Size[0];
@@ -182,9 +165,6 @@ void Calculate(int *BaseSize, int Base, int Exp)
             Size[1] = Size[0]*2;
             Size[0] = placeholder;
         }
-
-    //if(Size[0] == 0)
-    //    return printf("A paper of size A%i is %i*%i^%i by %i*%i^%i mm\n", 4 - Exp, BaseSize[0],Base,exp[0],BaseSize[1],Base,exp[1]);
     long double sizex = Size[0]>(long double)1 ? (int)Size[0] : Size[0];
     long double sizey = Size[1]>(long double)1 ? (int)Size[1] : Size[1];
     printf("A paper of size A%i is %g by %g mm\n",4-Exp,sizex,sizey);
@@ -205,7 +185,7 @@ int IsNum(char *Str,int Constraint)
     {
         int c = (int)Str[i];
         //if the char is outside of the valid ascii range then return 0
-        if(c>58 || c< 48){
+        if(c>57 || c< 48){
             printf("You must enter a number\n");
             return 0;
         }
@@ -241,12 +221,12 @@ void main(){
         printf("Which size do you want to calculate?\nA");
         scanf("%s",str);
         int i = Atoi(str,4);
-        if(i!=-1 )
+        if( i != -1 )
         {
-            if(i <=1000)
+            if(i <= 1000)
             {
                 long size[2] = {210, 297};
-                Calculate(size, 2, 4 - i);
+                Calculate(size, 4 - i);
             }
             else
                 printf("You must enter a value smaller or equal to 1000\n");
