@@ -40,14 +40,21 @@ void main(){
 //Uppgift 1 c
 #if 0
 void main(){
-    int digit,right_digit;
-    printf("Enter the first Integer\n Integer > ");
-    scanf("%i",&digit);
-    while (digit != 0){
-        printf("%i",digit%10);
-        digit/=10;
+    int number;
+    while(1) {
+        char fac = ' ';
+        printf("Enter your number.\n");
+        scanf("%i", &number);
+        if(number < 0) {
+            fac = '-';
+            number = -number;
+        }
+        do {
+            printf("%i", number % 10);
+            number /= 10;
+        } while (number != 0);
+        printf("%c\n",fac);
     }
-    printf("\n");
 }
 #endif
 //Uppgift 2 a
@@ -83,29 +90,48 @@ void main(){
 #endif
 //Uppgift 3 a
 #if 0
+//function to calculate the nth triangular number
+int calulateTriangularNumber(int n)
+{
+    int i,triangularNumber = 0;
 
+    for ( i = 1; i <= n; ++i)
+        triangularNumber += i;
+
+    return triangularNumber;
+}
+void main(void)
+{
+    int number,counter;
+    for(counter = 0; counter < 5; ++counter)
+    {
+        printf("What number do you want to use?\n");
+        scanf("%i", &number);
+        printf("Triangular number %i is %i \n\n", number, calulateTriangularNumber(number));
+    }
+}
 #endif
 //Uppgift 3 b
 #if 0
-int prime(int a){
-    if(a<1)
+int prime(int n){
+    if(n < 1)
         return 0;
-    else if(a==1)
+    else if(n == 1)
         return 1;
     int i = 2;
-    while(a%i!=0){
+    while(n % i != 0 )
         ++i;
-    }
-    if(i==a)
+    if(i == n)
         return 1;
     return 0;
 }
 void main(){
     while(1==1) {
         int i = 0;
-        printf("Bruh what number you wanna check?\n");
+        printf("What number you want to know if it's a prime?\n");
         scanf("%i", &i);
-        printf("%i\n", prime(i));
+        char *s = prime(i) ? "Is a prime number\n" : "Is not a prime number\n";
+        printf(s);
     }
 }
 #endif
@@ -153,7 +179,7 @@ long double Pow(int Base, int Exponent){
 void Calculate(int *BaseSize, int Exp)
 {
     long double Size[] = {(long double)BaseSize[0],(long double)BaseSize[1]};
-    if(Exp<0)
+    if(Exp<0 )
         for(int i = 0; i < -Exp;++i) {
             long double placeholder = Size[0];
             Size[0] = Size[1]/2;
