@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 #include <math.h>
 #if 0
@@ -140,6 +139,15 @@ void main(){
 }
 #endif
 #if 1
+/// Function that finds the length of a given string
+/// \param Str is the string we want to know the length of
+/// \return Returns the length of a string, if string is null, it returns 0
+int Strlen(char *Str){
+    int len = 0;
+    while (Str[len]!= '\0')
+        ++len;
+    return len;
+}
 /// Computes the value of Base^Exponent
 /// \param Base is the base of the power of computation
 /// \param Exponent is the exponent of the power of computation
@@ -163,7 +171,7 @@ long double Pow(int Base, int Exponent){
 /// \param Base Probably 2 but this would work for anny relation not just half or double size as long as the relation is an integer
 /// \param Exp Is the size that we want to calculate
 /// \return  Returns the size of an A(Exp) Paper
-long double calc(int BaseSize[],int Base,int Exp)
+long double Calculate(int *BaseSize, int Base, int Exp)
 {
     int Size[] = {(int)(BaseSize[0]*Pow(Base,Exp)),(int)(BaseSize[1]*Pow(Base,Exp))};
     if(Size[0] == 0)
@@ -176,17 +184,18 @@ long double calc(int BaseSize[],int Base,int Exp)
 /// \return Returns 1 if the string is a number and 0 if not
 int IsNum(char *Str,int Constraint)
 {
-    int len = strlen(Str);
+    int len = Strlen(Str);
     if(len>Constraint)
     {
-        printf("You have to enter a positive number smaller than 999\n");
+        printf("You must enter a number \"shorter\" than 10000\n");
         return 0;
     }
     for(int i = 0; i < len; ++i)
     {
+        int c = (int)Str[i];
         //if the char is outside of the valid ascii range then return 0
-        if(Str[i]>58 && Str[i]< 48){
-            printf("You must enter a positive number\n");
+        if(c>58 || c< 48){
+            printf("You must enter a number\n");
             return 0;
         }
     }
@@ -200,7 +209,7 @@ int IsNum(char *Str,int Constraint)
 /// otherwise returns the value -1
 long Atoi(char *Str,int Constraints){
     long Ret = 0;
-    int len = strlen(Str);
+    int len = Strlen(Str);
     if(IsNum(Str,Constraints)==1) {
         //48 är ASCII värdet för 0 och alla heltal följer.
         //Eftersom att vi har kontrollerat att strängen är tal så kan vi bara subtrahera 48
@@ -215,18 +224,25 @@ long Atoi(char *Str,int Constraints){
 void main(){
     //loopar så att man kan kolla mer än 1 tal
     while(1){
-        char *str[256];
+        char *str = "";
         //Kan ta bort denna printen om ni vill men tyckte att det var snyggare så
         printf("--------------------------------------------------\n");
         printf("Which size do you want to calculate?\nA");
-        scanf("%s",&str);
+        scanf("%s",str);
         if(str[0]=='Q')
             return;
         int i = Atoi(str,4);
-        if(i!=-1 && i <=1000) {
-            long size[2] = {210, 297};
-            calc(size, 2, 4 - i);
+        if(i!=-1 )
+        {
+            if(i <=1000)
+            {
+                long size[2] = {210, 297};
+                Calculate(size, 2, 4 - i);
+            }
+            else
+                printf("You must enter a value smaller or equal to 1000\n");
         }
+
     }
 }
 #endif
