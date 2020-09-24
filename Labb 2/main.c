@@ -201,20 +201,15 @@ void CalulateAxSize(int *BaseSize, int DeltaSize)
 /// \param String is the string that will be checked
 /// \param Length_Constraint Is the length constraint of the string
 /// \return Returns 1 if the string is a number and 0 if not
-int StringIsNumerical(char *String, int Length_Constraint)
+int StringIsNumerical(char *String)
 {
     int LengthOfString = StringLength(String);
-    if(LengthOfString > Length_Constraint)
-    {
-        printf("You must enter a number \"shorter\" than 10000\n");
-        return 0;
-    }
     for(int i = 0; i < LengthOfString; ++i)
     {
         int c = (int)String[i];
         //if the char is outside of the valid ascii range then return 0
         if(c>57 || c< 48){
-            printf("You must enter a number\n");
+            printf("You must enter a positive integer\n");
             return 0;
         }
     }
@@ -226,15 +221,15 @@ int StringIsNumerical(char *String, int Length_Constraint)
 /// \param Length_Constraint is the length constraints, set this to max int if you dont want to constrain the size of the number
 /// \return returns the integer value contained in the string if the string is numerical
 /// otherwise returns the value -1
-long StringToInt(char *String, int Length_Constraint){
-    long ValueToReturn = 0;
+long StringToInt(char *String){
+    long ValueToReturn = -1;
     int len = StringLength(String);
-    if(StringIsNumerical(String, Length_Constraint) == 1) {
+    if(StringIsNumerical(String) == 1) {
+        ValueToReturn = 0;
         for (int i = 0; i < len; ++i)
             ValueToReturn += (String[i] - 48) * PowerOf(10, len - i - 1);
-        return ValueToReturn;
     }
-    return -1;
+    return ValueToReturn;
 }
 /// Main function, will loop indefinitely
 void main(){
@@ -245,7 +240,7 @@ void main(){
         printf("--------------------------------------------------\n");
         printf("Which size do you want to calculate?\nA");
         scanf("%s", UserInput);
-        int UserInputAsInt = StringToInt(UserInput, 4);
+        int UserInputAsInt = StringToInt(UserInput);
         if(UserInputAsInt != -1 )
         {
             if(UserInputAsInt <= 1000)
