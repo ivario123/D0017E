@@ -12,14 +12,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e14c094-bf47-4091-bb25-63761bd21b47" name="Default Changelist" comment="Done">
+      <change afterPath="$PROJECT_DIR$/../Labb 3/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Labb 3/.idea/Labb 3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Labb 3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Labb 3/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Labb 3/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Labb 3/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Labb 3/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Labb 1" beforeDir="false" afterPath="$PROJECT_DIR$/../Labb 1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Labb_2.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Labb_2.dir/main.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Labb_2.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Labb_2.dir/vc140.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Labb_2.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Labb_2.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Labb_2.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Labb_2.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Labb_2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Labb_2.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/~WRL3540.tmp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,16 +45,17 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="Labb_2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Labb_2" TARGET_NAME="Labb_2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Labb_2" RUN_TARGET_NAME="Labb_2">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Labb_2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Labb_2" TARGET_NAME="Labb_2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Labb_2" RUN_TARGET_NAME="Labb_2">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -73,7 +77,8 @@
       <workItem from="1599742828454" duration="9535000" />
       <workItem from="1599833403496" duration="3157000" />
       <workItem from="1600673592681" duration="8834000" />
-      <workItem from="1600847740901" duration="19766000" />
+      <workItem from="1600847740901" duration="20398000" />
+      <workItem from="1600935165261" duration="544000" />
     </task>
     <task id="LOCAL−00001" summary="Finnished lab 2 i think">
       <created>1600852156804</created>
@@ -122,38 +127,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1600869213845" />
-    <state width="914" height="281" key="GridCell.Tab.0.bottom" timestamp="1600873463613">
+    <state width="914" height="347" key="GridCell.Tab.0.bottom" timestamp="1600878161047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600873463613" />
-    <state width="914" height="281" key="GridCell.Tab.0.center" timestamp="1600873463613">
+    <state width="914" height="347" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600878161047" />
+    <state width="914" height="347" key="GridCell.Tab.0.center" timestamp="1600878161046">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600873463613" />
-    <state width="914" height="281" key="GridCell.Tab.0.left" timestamp="1600873463612">
+    <state width="914" height="347" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600878161046" />
+    <state width="914" height="347" key="GridCell.Tab.0.left" timestamp="1600878161046">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600873463612" />
-    <state width="914" height="281" key="GridCell.Tab.0.right" timestamp="1600873463613">
+    <state width="914" height="347" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600878161046" />
+    <state width="914" height="347" key="GridCell.Tab.0.right" timestamp="1600878161047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600873463613" />
-    <state width="914" height="347" key="GridCell.Tab.1.bottom" timestamp="1600872869677">
+    <state width="914" height="347" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600878161047" />
+    <state width="914" height="347" key="GridCell.Tab.1.bottom" timestamp="1600878161047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600872869677" />
-    <state width="914" height="347" key="GridCell.Tab.1.center" timestamp="1600872869677">
+    <state width="914" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600878161047" />
+    <state width="914" height="347" key="GridCell.Tab.1.center" timestamp="1600878161047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600872869677" />
-    <state width="914" height="347" key="GridCell.Tab.1.left" timestamp="1600872869676">
+    <state width="914" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600878161047" />
+    <state width="914" height="347" key="GridCell.Tab.1.left" timestamp="1600878161047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600872869676" />
-    <state width="914" height="347" key="GridCell.Tab.1.right" timestamp="1600872869677">
+    <state width="914" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600878161047" />
+    <state width="914" height="347" key="GridCell.Tab.1.right" timestamp="1600878161047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600872869677" />
+    <state width="914" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600878161047" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600866934632">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

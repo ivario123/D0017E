@@ -151,11 +151,11 @@ void main(){
 //Uppgift 4
 #if 1
 /// Function that finds the length of a given string
-/// \param Str is the string we want to know the length of
+/// \param String is the string we want to know the length of
 /// \return Returns the length of a string, if string is null, it returns 0
-int Strlen(char *Str){
+int StringLength(char *String){
     int len = 0;
-    while (Str[len] != '\0')
+    while (String[len] != '\0')
         ++len;
     return len;
 }
@@ -163,77 +163,76 @@ int Strlen(char *Str){
 /// \param Base is the base of the power of computation
 /// \param Exponent is the exponent of the power of computation
 /// \return returns Base^Exponent no matter if the exponent is positive or negative
-long double Pow(int Base, int Exponent){
+long double PowerOf(int Base, int Exponent){
     if(Exponent==0)
         return 1;
     if(Exponent<0)
-        return 1/(Base*Pow(Base,(-Exponent)-1));
+        return 1/(Base * PowerOf(Base, (-Exponent) - 1));
     else
-        return Base*Pow(Base,Exponent-1);
+        return Base * PowerOf(Base, Exponent - 1);
 }
 
 
 /// Function that computes the size of a given Ax size paper
 /// \param BaseSize is the size of an A4 Paper
-/// \param Exp Is the size that we want to calculate
-void Calculate(int *BaseSize, int Exp)
+/// \param DeltaSize Is the difference in size that we want to calculate (difference from A4)
+void CalulateAxSize(int *BaseSize, int DeltaSize)
 {
+    int counter;
+    //size  = {Width,height}
     long double Size[] = {(long double)BaseSize[0],(long double)BaseSize[1]};
-    if(Exp<0 )
-        for(int i = 0; i < -Exp;++i) {
+    if(DeltaSize < 0 )
+        for(counter = 0; counter < -DeltaSize; ++counter) {
             long double placeholder = Size[0];
             Size[0] = Size[1]/2;
             Size[1] = placeholder;
         }
     else
-        for(int i = 0; i < Exp;++i) {
+        for(counter = 0; counter < DeltaSize; ++counter) {
             long double placeholder = Size[1];
             Size[1] = Size[0]*2;
             Size[0] = placeholder;
         }
-    long double sizex = Size[0]>(long double)1 ? (int)Size[0] : Size[0];
-    long double sizey = Size[1]>(long double)1 ? (int)Size[1] : Size[1];
-    printf("A paper of size A%i is %g by %g mm\n",4-Exp,sizex,sizey);
+    long double Width = Size[0] > (long double)1 ? (int)Size[0] : Size[0];
+    long double Height = Size[1] > (long double)1 ? (int)Size[1] : Size[1];
+    printf("A paper of size A%i is %g by %g mm\n", 4 - DeltaSize, Width, Height);
 }
 /// Function that checks if a given string is a positive numerical string
-/// \param Str is the string that will be checked
-/// \param Constraint Is the length constraint of the string
+/// \param String is the string that will be checked
+/// \param Length_Constraint Is the length constraint of the string
 /// \return Returns 1 if the string is a number and 0 if not
-int IsNum(char *Str,int Constraint)
+int StringIsNumerical(char *String, int Length_Constraint)
 {
-    int len = Strlen(Str);
-    if(len>Constraint)
+    int LengthOfString = StringLength(String);
+    if(LengthOfString > Length_Constraint)
     {
         printf("You must enter a number \"shorter\" than 10000\n");
         return 0;
     }
-    for(int i = 0; i < len; ++i)
+    for(int i = 0; i < LengthOfString; ++i)
     {
-        int c = (int)Str[i];
+        int c = (int)String[i];
         //if the char is outside of the valid ascii range then return 0
         if(c>57 || c< 48){
             printf("You must enter a number\n");
             return 0;
         }
     }
-    //if all chars are accepted return 1
+    //if all chars are accepted return 19
     return 1;
 }
 /// Function that converts a given string to a number and assures that the string is numerical
-/// \param Str is the string that is to be converted to an integer
-/// \param Constraints is the length constraints, set this to max int if you dont want to constrain the size of the number
+/// \param String is the string that is to be converted to an integer
+/// \param Length_Constraint is the length constraints, set this to max int if you dont want to constrain the size of the number
 /// \return returns the integer value contained in the string if the string is numerical
 /// otherwise returns the value -1
-long Atoi(char *Str,int Constraints){
-    long Ret = 0;
-    int len = Strlen(Str);
-    if(IsNum(Str,Constraints)==1) {
-        //48 är ASCII värdet för 0 och alla heltal följer.
-        //Eftersom att vi har kontrollerat att strängen är tal så kan vi bara subtrahera 48
-        //för att konvertera till heltal
+long StringToInt(char *String, int Length_Constraint){
+    long ValueToReturn = 0;
+    int len = StringLength(String);
+    if(StringIsNumerical(String, Length_Constraint) == 1) {
         for (int i = 0; i < len; ++i)
-            Ret += (Str[i] - 48) * Pow(10, len - i - 1);
-        return Ret;
+            ValueToReturn += (String[i] - 48) * PowerOf(10, len - i - 1);
+        return ValueToReturn;
     }
     return -1;
 }
@@ -241,18 +240,18 @@ long Atoi(char *Str,int Constraints){
 void main(){
     //loopar så att man kan kolla mer än 1 tal
     while(1){
-        char *str = "";
+        char *UserInput = "";
         //Kan ta bort denna printen om ni vill men tyckte att det var snyggare så
         printf("--------------------------------------------------\n");
         printf("Which size do you want to calculate?\nA");
-        scanf("%s",str);
-        int i = Atoi(str,4);
-        if( i != -1 )
+        scanf("%s", UserInput);
+        int UserInputAsInt = StringToInt(UserInput, 4);
+        if(UserInputAsInt != -1 )
         {
-            if(i <= 1000)
+            if(UserInputAsInt <= 1000)
             {
-                long size[2] = {210, 297};
-                Calculate(size, 4 - i);
+                long SizeOfA4[2] = {210, 297};
+                CalulateAxSize(SizeOfA4, 4 - UserInputAsInt);
             }
             else
                 printf("You must enter a value smaller or equal to 1000\n");
