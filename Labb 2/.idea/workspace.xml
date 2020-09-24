@@ -14,11 +14,6 @@
     <list default="true" id="5e14c094-bf47-4091-bb25-63761bd21b47" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Labb 1" beforeDir="false" afterPath="$PROJECT_DIR$/../Labb 1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Labb_2.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Labb_2.dir/main.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Labb_2.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Labb_2.dir/vc140.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Labb_2.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Labb_2.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Labb_2.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Labb_2.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Labb_2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Labb_2.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +69,7 @@
       <workItem from="1599833403496" duration="3157000" />
       <workItem from="1600673592681" duration="8834000" />
       <workItem from="1600847740901" duration="20398000" />
-      <workItem from="1600935165261" duration="5392000" />
+      <workItem from="1600935165261" duration="6521000" />
     </task>
     <task id="LOCAL−00001" summary="Finnished lab 2 i think">
       <created>1600852156804</created>
@@ -118,7 +113,13 @@
       <option name="presentableId" value="LOCAL−00007" />
       <updated>1600953173652</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL−00008" summary="Removed some excess code">
+      <created>1600956153868</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1600956153870</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,26 +133,26 @@
     <option name="LAST_COMMIT_MESSAGE" value="Removed some excess code" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1600953179192">
+    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1600956152682">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1600953179192" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1600956063177">
+    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1600956152682" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1600956686410">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600956063177" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1600956063176">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600956686410" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1600956686410">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600956063176" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1600956063173">
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600956686410" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1600956686408">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600956063173" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1600956063176">
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600956686408" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1600956686410">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600956063176" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600956686410" />
     <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1600953130385">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -168,10 +169,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600953130385" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600953195332">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600956158019">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1600953195332" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1600956158019" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1600848823344">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

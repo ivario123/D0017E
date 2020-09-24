@@ -213,7 +213,7 @@ int StringIsNumerical(char *String)
             return 0;
         }
     }
-    //if all chars are accepted return 19
+    //if all§ chars are accepted return 19
     return 1;
 }
 /// Function that converts a given string to a number and assures that the string is numerical
