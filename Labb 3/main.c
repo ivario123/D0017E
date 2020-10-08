@@ -24,7 +24,7 @@ void substring (source, start, count, result)
     int i;
     for( i = start; i < start+count && source[i]!='\0' ; ++i )
         result[ i-start ] = source[ i ];
-    result[ i+1 ] ='\0';
+    result[ count ] ='\0';
 
 }
 // 1 b
@@ -47,6 +47,16 @@ int findstring(Main,Sub)
         }
     return -1;
 }
+#if 0
+void main(){
+    char * MainString = "a chatterbox";
+    char   SubString[255];
+    substring(MainString,3,3,SubString);
+    printf("The substring in %s from index %i to index %i is ",MainString,3,3);
+    printf(SubString);
+    printf("\nThe index of the substring %s in the string %s is : %i\n","hat",MainString,findstring(MainString,"hat"));
+}
+#endif
 
 // 2 a
 #if 0
@@ -63,7 +73,9 @@ void main()
     struct entry C = {.value = 5, .next = NULL};
     struct entry B = {.value = 3, .next = NULL};
     struct entry A = {.value = 2, .next = &C};
+    print()
     insertEntry(&A,B);
+
 }
 #endif
 // 2 b
@@ -90,13 +102,19 @@ void main()
     printf("%i",compareStrings("He0","He?"));
 }
 #endif
+// 3 a
+/*
+ * C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\VC\Linux\include\usr\include contains stdio.h and limits.h
+ * C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\SDK\ScopeCppSDK\vc15\SDK\include\ucrt contains stdio.h and contains.h
+ */
 // 3 b
-#define min(b,c)  (b<c?b:c)
+#define MIN(b,c)  (b<c?b:c)
 #if 0
 void main(){
-    printf("%i", min(1,2));
+    printf("%i", MIN(1,2));
 }
 #endif
+#if 0
 // 4 a
 void toUpper ( char str[] ){
     int counter = 0;
@@ -107,28 +125,29 @@ void toUpper ( char str[] ){
 }
 void overWrite ( char * inputFile,char *outputFile )
 {
-    FILE * fpa,* fpb;
-    fpa = fopen ( inputFile, "a+" );
-    if ( fpa == NULL ) {
+    FILE * FilePointerFileA,* FilePointerFileB;
+    FilePointerFileA = fopen (inputFile, "a+" );
+    if (FilePointerFileA == NULL ) {
         printf ( "Error while reading %s no such file\n", inputFile );
         return;
     }
-    fpb = fopen ( outputFile,"w" );
-    fclose ( fpb );
-    fpb = fopen ( outputFile,"a+" );
+    FilePointerFileB = fopen (outputFile, "w" );
+    fclose (FilePointerFileB );
+    FilePointerFileB = fopen (outputFile, "a+" );
     char c;
     char buf[255];
 
-    while ( ! feof ( fpa ) ) {
-        fgets ( buf, sizeof ( buf ), fpa );
+    while ( ! feof (FilePointerFileA ) ) {
+        fgets (buf, sizeof ( buf ), FilePointerFileA );
         toUpper ( buf );
-        fprintf ( fpb, "%s", buf );
+        fprintf (FilePointerFileB, "%s", buf );
         printf ( buf );
     }
-    rewind ( fpb );
-    fclose ( fpb );
-    fclose ( fpa );
+    rewind (FilePointerFileB );
+    fclose (FilePointerFileB );
+    fclose (FilePointerFileA );
 }
+//4b
 int terminates(char str[]){
     int counter = 0;
     while(str[counter] !='\0' )
@@ -171,3 +190,4 @@ void main(){
     OutPutFile = "C:\\Users\\55131\\Documents\\LTU Kurser\\D0017E\\Labb 3\\Inputb.txt";
     alternateRead (Inputfile,OutPutFile);
 }
+#endif
