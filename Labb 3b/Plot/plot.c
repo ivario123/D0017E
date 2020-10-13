@@ -8,9 +8,28 @@
 #include <math.h>
 #include "interp1.h"
 #define M_PI 3.14159265358979323846
+
+#define Max(a,b) a>b?a:b
+void draw_line(PIXEL_RGB24 *image,int width,int height,float x1,float y1,float x2,float y2,PIXEL_RGB24 *color)
+{
+    float X[] = {x1,x2}, Y[] ={y1,y2};
+    float x = x1;
+    float y = y1;
+    float ret = 0;
+    while(ret!=-1)
+    {
+        ret = interp1((x1!=x2?X:Y),(x1!=x2?Y:X), 2, (x1!=x2?x:y),  (x1!=x2?&y:&x));
+        if(x<width && y < width && x > -1 && y > -1)
+            image[(int)(x+y*width)] = *color;
+        if(x1!=x2)
+            x = x + (x1<x2?1:-1);
+        else
+            y = y + (y1<y2?1:-1);
+    }
+}
 /*!
 	Draw circle on image.
- 
+
 	\param image Image buffer of size width*height.
 	\param width Width of image.
 	\param height Height of image.
@@ -19,31 +38,6 @@
 	\param radius Radius of circle.
 	\param color Color of circle.
 */
-#define Max(a,b) a>b?a:b
-void draw_line(PIXEL_RGB24 *image,int width,int height,float x1,float y1,float x2,float y2,PIXEL_RGB24 *color)
-{
-    float X[] = {x1,x2}, Y[] ={y1,y2};
-    float x = x1;
-    float y = y1;
-    float ret = 0;
-    if(x2-x1==0){
-        while(ret!=-1)
-        {
-            ret = interp1(Y, X, 2, y,  &x);
-            if(x<width && y < width && x > -1 && y > -1)
-                image[(int)(x+y*width)] = *color;
-            y = y + (y1<y2?1:-1);
-        }
-        return;
-    }
-    while(ret!=-1)
-    {
-        ret = interp1(X, Y, 2, x,  &y);
-        if(x<width && y < width && x > -1 && y > -1)
-            image[(int)(x+y*width)] = *color;
-        x = x + (x1<x2?1:-1);
-    }
-}
 void draw_circle(PIXEL_RGB24 *image, int width, int height,
 	int x0, int y0, int radius, const PIXEL_RGB24 *color) {
 	double alpha; /* angle */

@@ -13,19 +13,12 @@
   <component name="ChangeListManager">
     <list default="true" id="07b8eff1-c541-4410-8fa1-eea47a7732ba" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../Labb 1" beforeDir="false" afterPath="$PROJECT_DIR$/../../Labb 1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Mandelbrot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Mandelbrot/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NovelLinesAndCircels.tga" beforeDir="false" afterPath="$PROJECT_DIR$/NovelLinesAndCircels.tga" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Plot.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Plot.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Plot.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Plot.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Plot.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Plot.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Plot.dir/interp1.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Plot.dir/interp1.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Plot.dir/plot.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Plot.dir/plot.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Plot.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Plot.dir/vc140.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Plot.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Plot.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Plot.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Plot.ilk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Plot.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Plot.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interp1.c" beforeDir="false" afterPath="$PROJECT_DIR$/interp1.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plot.c" beforeDir="false" afterPath="$PROJECT_DIR$/plot.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +78,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602601936440</updated>
-      <workItem from="1602601940391" duration="4821000" />
+      <workItem from="1602601940391" duration="5446000" />
     </task>
     <servers />
   </component>
@@ -104,22 +97,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="410" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1602603100018" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1602606788307">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1602607372821">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602606788307" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1602606788307">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602607372821" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1602607372821">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602606788307" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1602606788307">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602607372821" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1602607372820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602606788307" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1602606788307">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602607372820" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1602607372821">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602606788307" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602607372821" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1602606606950">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
