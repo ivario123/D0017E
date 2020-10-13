@@ -1,0 +1,3 @@
+C:/Users/55131/Documents/LTU Kurser/D0017E/Labb 3b/Plot/cmake-build-debug/CMakeFiles/Plot.dir
+C:/Users/55131/Documents/LTU Kurser/D0017E/Labb 3b/Plot/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/55131/Documents/LTU Kurser/D0017E/Labb 3b/Plot/cmake-build-debug/CMakeFiles/rebuild_cache.dir
