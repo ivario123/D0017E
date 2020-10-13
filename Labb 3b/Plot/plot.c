@@ -6,6 +6,7 @@
 
 #include "tga.h"
 #include <math.h>
+#include "interp1.h"
 #define M_PI 3.14159265358979323846
 /*!
 	Draw circle on image.
@@ -19,32 +20,28 @@
 	\param color Color of circle.
 */
 #define Max(a,b) a>b?a:b
-void draw_line(PIXEL_RGB24 *image,int width,int height,int x1,int y1,int x2,int y2,PIXEL_RGB24 *color)
+void draw_line(PIXEL_RGB24 *image,int width,int height,float x1,float y1,float x2,float y2,PIXEL_RGB24 *color)
 {
-    int dx = x2 - x1;
-    int dy = y2 - y1;
-    int * X = malloc(sizeof(float)*Max(dx,dy)),* Y = malloc(sizeof(float)*Max(dx,dy));
-    for(int i = 0; i < dx; ++i){
-
-    }
-    if(dx == 0 && dy!=0)
-    {
-        for(int y = y1; y != y2 ; y = y+(y1<y2?1:-1))
+    float X[] = {x1,x2}, Y[] ={y1,y2};
+    float x = x1;
+    float y = y1;
+    float ret = 0;
+    if(x2-x1==0){
+        while(ret!=-1)
         {
-            int x = x1;
-            if(-1 < x && x < width && -1 < y && y  < height )
-            {
-                image[x+y*width] = *color;
-            }
+            ret = interp1(Y, X, 2, y,  &x);
+            if(x<width && y < width && x > -1 && y > -1)
+                image[(int)(x+y*width)] = *color;
+            y = y + (y1<y2?1:-1);
         }
+        return;
     }
-    for(int x = x1; x != x2 ; x = x+(x1<x2?1:-1))
+    while(ret!=-1)
     {
-        int y = y1 + dy * (x - x1) / dx;
-        if(-1 < x && x < width && -1 < y && y < height )
-        {
-            image[x+y*width] = *color;
-        }
+        ret = interp1(X, Y, 2, x,  &y);
+        if(x<width && y < width && x > -1 && y > -1)
+            image[(int)(x+y*width)] = *color;
+        x = x + (x1<x2?1:-1);
     }
 }
 void draw_circle(PIXEL_RGB24 *image, int width, int height,

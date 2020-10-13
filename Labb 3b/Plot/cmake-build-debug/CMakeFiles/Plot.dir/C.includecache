@@ -6,11 +6,15 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/55131/Documents/LTU Kurser/D0017E/Labb 3b/Plot/interp1.h
+
 C:/Users/55131/Documents/LTU Kurser/D0017E/Labb 3b/Plot/plot.c
 tga.h
 C:/Users/55131/Documents/LTU Kurser/D0017E/Labb 3b/Plot/tga.h
 math.h
 -
+interp1.h
+C:/Users/55131/Documents/LTU Kurser/D0017E/Labb 3b/Plot/interp1.h
 
 C:/Users/55131/Documents/LTU Kurser/D0017E/Labb 3b/Plot/tga.h
 stdio.h
