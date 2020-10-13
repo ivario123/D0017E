@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/55131/Documents/LTU Kurser/D0017E/Labb 3b/Task1/ read_sample.c
+tga.h
+C:/Users/55131/Documents/LTU Kurser/D0017E/Labb 3b/Task1/tga.h
+stdio.h
+-
+string.h
+-
+
+C:/Users/55131/Documents/LTU Kurser/D0017E/Labb 3b/Task1/tga.h
+stdio.h
+-
+stdlib.h
+-
+inttypes.h
+-
+

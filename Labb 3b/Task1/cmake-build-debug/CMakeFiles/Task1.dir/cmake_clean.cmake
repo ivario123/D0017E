@@ -1,9 +1,10 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Task1.dir/_read_sample.c.obj"
   "CMakeFiles/Task1.dir/tga.c.obj"
   "Task1.exe"
   "Task1.exe.manifest"
+  "Task1.lib"
   "Task1.pdb"
-  "libTask1.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

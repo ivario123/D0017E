@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C://Users//55131//Documents//LTU Kurser//D0017E//Labb 3b//Gradient//tga.h
+stdio.h
+-
+stdlib.h
+-
+inttypes.h
+-
+
+C:/Users/55131/Documents/LTU Kurser/D0017E/Labb 3b/Gradient/gradient.c
+C://Users//55131//Documents//LTU Kurser//D0017E//Labb 3b//Gradient//tga.h
+-
+

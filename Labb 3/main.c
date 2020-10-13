@@ -5,12 +5,11 @@ struct entry
     struct entry *next;
 };
 int strlen(char *String){
-    int len = 0;
+    int len = 1;
 
     while (*(++String )!= '\0')
     {
         ++len;
-        ++String;
     }
     return len;
 }
@@ -54,7 +53,7 @@ void main(){
     substring(MainString,3,3,SubString);
     printf("The substring in %s from index %i to index %i is ",MainString,3,3);
     printf(SubString);
-    printf("\nThe index of the substring %s in the string %s is : %i\n","hat",MainString,findstring(MainString,"hat"));
+    printf("\nThe index of the substring %s in the string %s is : %i\n","hat","a chatterbox",findstring("a chatterbox","hat"));
 }
 #endif
 
@@ -73,9 +72,9 @@ void main()
     struct entry C = {.value = 5, .next = NULL};
     struct entry B = {.value = 3, .next = NULL};
     struct entry A = {.value = 2, .next = &C};
-    print()
+    printf("talet efter a innan : %i\n",A.next->value);
     insertEntry(&A,B);
-
+    printf("talet efter a efter : %i\n",A.next->value);
 }
 #endif
 // 2 b
@@ -83,23 +82,20 @@ void main()
 int compareStrings(char *s1,char *s2)
 {
     int i = 0, answer;
-    char a = ' ',b = ' ';
-    while(*s1!='\0'&&*s2!='\0'&& a == b)
+    while(*s1!='\0'&&*s2!='\0'&& *s1 == *s2)
     {
-        a = *s1;
-        b = *s2;
         ++s1;
         ++s2;
     }
-    if(a>b)
+    if(*s1>*s2)
         return -1;
-    else if(a == b)
+    else if(*s1 == *s2)
         return 0;
     return 1;
 }
 void main()
 {
-    printf("%i",compareStrings("He0","He?"));
+    printf("%i",compareStrings("Hej","Hez"));
 }
 #endif
 // 3 a
@@ -114,7 +110,7 @@ void main(){
     printf("%i", MIN(1,2));
 }
 #endif
-#if 0
+#if 1
 // 4 a
 void toUpper ( char str[] ){
     int counter = 0;
@@ -126,24 +122,20 @@ void toUpper ( char str[] ){
 void overWrite ( char * inputFile,char *outputFile )
 {
     FILE * FilePointerFileA,* FilePointerFileB;
-    FilePointerFileA = fopen (inputFile, "a+" );
+    FilePointerFileA = fopen (inputFile, "r" );
     if (FilePointerFileA == NULL ) {
         printf ( "Error while reading %s no such file\n", inputFile );
         return;
     }
     FilePointerFileB = fopen (outputFile, "w" );
-    fclose (FilePointerFileB );
-    FilePointerFileB = fopen (outputFile, "a+" );
-    char c;
     char buf[255];
 
-    while ( ! feof (FilePointerFileA ) ) {
+    while ( ! feof ( FilePointerFileA ) ) {
         fgets (buf, sizeof ( buf ), FilePointerFileA );
         toUpper ( buf );
         fprintf (FilePointerFileB, "%s", buf );
         printf ( buf );
     }
-    rewind (FilePointerFileB );
     fclose (FilePointerFileB );
     fclose (FilePointerFileA );
 }
