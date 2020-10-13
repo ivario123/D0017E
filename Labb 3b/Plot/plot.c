@@ -10,9 +10,10 @@
 #define M_PI 3.14159265358979323846
 
 #define Max(a,b) a>b?a:b
+#define Min(a,b) a>b?b:a
 void draw_line(PIXEL_RGB24 *image,int width,int height,float x1,float y1,float x2,float y2,PIXEL_RGB24 *color)
 {
-    float X[] = {x1,x2}, Y[] ={y1,y2};
+    float X[] = {Min(x1,x2),Max(x1,x2)}, Y[] ={Min(y1,y2),Max(y1,y2)};
     float x = x1;
     float y = y1;
     float ret = 0;
@@ -80,6 +81,10 @@ int main(void) {
     draw_line(image,width,height,10,10,10,height*2,&blue);
 
     draw_line(image,width,height,10,10,width/2,10,&green);
+
+    draw_line(image,width,height,10,10,width/2,10,&green);
+
+    draw_line(image,width,height,190,180,30,40,&green);
 	
 	if(tga_write("C:\\Users\\55131\\Documents\\LTU Kurser\\D0017E\\Labb 3b\\Plot\\NovelLinesAndCircels.tga",width,height,image,24)!=TGA_OK) {
 		goto error_free;
