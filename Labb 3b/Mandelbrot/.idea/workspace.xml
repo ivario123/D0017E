@@ -12,60 +12,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="291c8880-c79f-4562-a38c-47ed96a11fca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/interp1.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interp1.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/.idea/Plot.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/3.17.3/CMakeCCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/3.17.3/CMakeRCCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdC/CMakeCCompilerId.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdC/CMakeCCompilerId.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/C.includecache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/DependInfo.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/build.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/cmake_clean.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/depend.internal" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/depend.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/embed.manifest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/flags.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/intermediate.manifest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/interp1.c.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/manifest.rc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/manifest.res" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/objects1.rsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/plot.c.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/progress.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/tga.c.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/vc140.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/Plot.cbp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/Plot.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/Plot.ilk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/Plot.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/empty.tga" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/interp1.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/interp1.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/plot.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/tga.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Plot/tga.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Labb 1" beforeDir="false" afterPath="$PROJECT_DIR$/../../Labb 1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Plot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Plot/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Plot/NovelLinesAndCircels.tga" beforeDir="false" afterPath="$PROJECT_DIR$/../Plot/NovelLinesAndCircels.tga" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/plot.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/plot.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/CMakeFiles/Plot.dir/vc140.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Plot/cmake-build-debug/Plot.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/Plot.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Plot/cmake-build-debug/Plot.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/Plot.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Plot/cmake-build-debug/Plot.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Plot/cmake-build-debug/Plot.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Plot/plot.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Plot/plot.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

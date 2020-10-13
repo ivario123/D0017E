@@ -18,11 +18,15 @@
 	\param radius Radius of circle.
 	\param color Color of circle.
 */
-
-void draw_line(PIXEL_RGB24 *image,int width,int height,int x1,int y1,int x2,int y2,int r,int g,int b)
+#define Max(a,b) a>b?a:b
+void draw_line(PIXEL_RGB24 *image,int width,int height,int x1,int y1,int x2,int y2,PIXEL_RGB24 *color)
 {
     int dx = x2 - x1;
     int dy = y2 - y1;
+    int * X = malloc(sizeof(float)*Max(dx,dy)),* Y = malloc(sizeof(float)*Max(dx,dy));
+    for(int i = 0; i < dx; ++i){
+
+    }
     if(dx == 0 && dy!=0)
     {
         for(int y = y1; y != y2 ; y = y+(y1<y2?1:-1))
@@ -30,9 +34,7 @@ void draw_line(PIXEL_RGB24 *image,int width,int height,int x1,int y1,int x2,int 
             int x = x1;
             if(-1 < x && x < width && -1 < y && y  < height )
             {
-                image[x+y*width].R = r;
-                image[x+y*width].G = g;
-                image[x+y*width].B = b;
+                image[x+y*width] = *color;
             }
         }
     }
@@ -41,15 +43,12 @@ void draw_line(PIXEL_RGB24 *image,int width,int height,int x1,int y1,int x2,int 
         int y = y1 + dy * (x - x1) / dx;
         if(-1 < x && x < width && -1 < y && y < height )
         {
-            image[x+y*width].R = r;
-            image[x+y*width].G = g;
-            image[x+y*width].B = b;
+            image[x+y*width] = *color;
         }
     }
 }
 void draw_circle(PIXEL_RGB24 *image, int width, int height,
 	int x0, int y0, int radius, const PIXEL_RGB24 *color) {
-	
 	double alpha; /* angle */
 	int x,y,index;
 	
@@ -85,11 +84,11 @@ int main(void) {
 	draw_circle(image,width,height,width/2,height/2,width/3,&red);
 	draw_circle(image,width,height,width/2,height/2,width/4,&green);
 	draw_circle(image,width,height,width/2,0,width/2,&blue);
-	draw_line(image,width,height,10,10,width/2,height/2,255,0,0);
+	draw_line(image,width,height,10,10,width/2,height/2,&red);
 
-    draw_line(image,width,height,10,10,10,height*2,0,0,255);
+    draw_line(image,width,height,10,10,10,height*2,&blue);
 
-    draw_line(image,width,height,10,10,width/2,10,0,0,0);
+    draw_line(image,width,height,10,10,width/2,10,&green);
 	
 	if(tga_write("C:\\Users\\55131\\Documents\\LTU Kurser\\D0017E\\Labb 3b\\Plot\\NovelLinesAndCircels.tga",width,height,image,24)!=TGA_OK) {
 		goto error_free;
