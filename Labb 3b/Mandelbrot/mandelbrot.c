@@ -43,7 +43,8 @@ int main(void) {
 	PIXEL_RGB24 *image = malloc(sizeof(PIXEL_RGB24)*1024*768), *color = malloc(sizeof(PIXEL_RGB24));
 	for(y = 0; y < height; ++y)
 	    for(x = 0; x<width; ++x) {
-            mandelbrot_color(x, y, width, height, &(image[x + y * width]), 25);
+            mandelbrot_color(x, y, width, height, color, 25);
+            copy_pixel(&(image[x + y * width]),color);
         }
 	//Complete this code so that the output TGA file gets some nice colors.
 	//Hint: you need to loop over all 1024*768 pixels and color each of them.
