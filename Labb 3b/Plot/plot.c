@@ -21,7 +21,7 @@ void draw_line(PIXEL_RGB24 *image,int width,int height,float x1,float y1,float x
     {
         ret = interp1((x1!=x2?X:Y),(x1!=x2?Y:X), 2, (x1!=x2?x:y),  (x1!=x2?&y:&x));
         if(x<width && y < width && x > -1 && y > -1)
-            image[(int)(x+y*width)] = *color;
+            copy_pixel(&image[(int)(x+y*width)] , color);
         if(x1!=x2)
             x = x + (x1<x2?1:-1);
         else
