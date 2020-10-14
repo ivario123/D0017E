@@ -13,31 +13,29 @@
 #define Min(a,b) a>b?b:a
 void draw_line(PIXEL_RGB24 *image,int width,int height,float x1,float y1,float x2,float y2,PIXEL_RGB24 *color)
 {
+
     //Reorienting the direction of the line to start at the smallest value
     float X[] = {Min(x1,x2),Max(x1,x2)}, Y[] ={(X[0] == x1 ? y1:y2),(X[0] == x1 ? y2:y1)};
-    //Starting att the smallest value in the vector
-    float x = X[0];
-    float y = Y[0];
-    //Placeholder variable to make sure that a coordinate is valid
-    float ret = 0;
-    //If coordinate is not valid break
-    while(ret!=-1)
+    (x1 == x2 && y1 > y2) ? Y[0] = y2,Y[1] =y1 : 1;
+    //Starting att the smallest value in the vectors
+    //ret is the placeholder that checks for exeptions
+    float x = X[0], y = Y[0], ret = 0;
+    //If coordinate is not valid break unless it is outside the screen then just continue untill we are on screen again
+    while(ret!=-1 || (x||y)<0)
     {
-        //If dx = 0 then just keep the last x otherwise add 1 to x
-        x = ( x1 != x2 ? x + 1 : x);
-        if(x1!=x2)
-            ret = interp1(X,Y, 2, x,  &y);
-        //Since I am basing every thing on itteration in X direction
-        // I need to have a special case for Y itteration where dx = 0
-        else
-        {
-            y += 1;
-            ret = 0;
-            if(y>Y[1])
-                ret = -1;
-        }
+
+        //if coordinates in image then draw else do big skip
         if(x<width && y < width && x > -1 && y > -1)
             copy_pixel(&image[(int)((int)x+(int)y*width)] , color);
+
+        //Since I am basing every thing on itteration in X direction
+        // I need to have a special case for Y itteration where dx = 0
+        if(x1==x2)
+            //Just itterate I untill reached the endpoint
+            y++>Y[1]?ret=-1:0;
+        else
+            //If dx = 0 then just keep the last x otherwise add 1 to x
+            ret = interp1(X,Y, 2, x++,  &y);}
     }
 }
 /*!
@@ -83,24 +81,23 @@ int main(void) {
 	if(tga_read("C:\\Users\\55131\\Documents\\LTU Kurser\\D0017E\\Labb 3b\\Plot\\empty.tga",&width,&height,&image)!=TGA_OK) {
 		goto error;
 	}
-	
-	/* Draw a few circles on the image */
-	draw_circle(image,width,height,width/2,height/2,width/3,&red);
-	draw_circle(image,width,height,width/2,height/2,width/4,&green);
-	draw_circle(image,width,height,width/2,0,width/2,&blue);
-	draw_line(image,width,height,10,10,width/2,height/2,&red);
 
-    draw_line(image,width,height,10,10,10,height*2,&blue);
 
-    draw_line(image,width,height,10,10,width/2,10,&green);
+    /* Draw a few circles on the image */
+    draw_circle(image,width,height,width/2,height/2,120,&blue);
+    draw_circle(image,width,height,width/2,height/2,240,&blue);
+    draw_circle(image,width,height,width/2,height/2,20,&blue);
 
-    draw_line(image,width,height,10,10,width/2,10,&green);
-
-    draw_line(image,width,height,190,180,30,40,&green);
-
-    draw_line(image,width,height,190,180,280,80,&blue);
-
-    draw_line(image,width,height,190,80,280,120,&red);
+    /* Draw a few lines on the image */
+    draw_line(image,width,height,0,0,(float)width,(float)height,&red);       // Vertical
+    draw_line(image,width,height,0,(float)height,width,0,&red);       // Vertical
+    draw_line(image,width,height,256,236,256,136,&red);       // Vertical
+    draw_line(image,width,height,256,276,256,376,&red);       // Vertical
+    draw_line(image,width,height,276,256,376,256,&red);       // Vertical
+    draw_line(image,width,height,236,256,136,256,&red);       // Vertical
+    draw_line(image,width,height,50,136,462,136,&green);        // Horizontal
+    draw_line(image,width,height,50,136,256,495,&green);        // 45 degrees
+    draw_line(image,width,height,462,136,256,495,&green);        // 45 degrees
     if(tga_write("C:\\Users\\55131\\Documents\\LTU Kurser\\D0017E\\Labb 3b\\Plot\\NovelLinesAndCircels.tga",width,height,image,24)!=TGA_OK) {
 		goto error_free;
 	}
