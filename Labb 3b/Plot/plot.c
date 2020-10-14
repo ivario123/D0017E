@@ -13,19 +13,24 @@
 #define Min(a,b) a>b?b:a
 void draw_line(PIXEL_RGB24 *image,int width,int height,float x1,float y1,float x2,float y2,PIXEL_RGB24 *color)
 {
-    float X[] = {Min(x1,x2),Max(x1,x2)}, Y[] ={Min(y1,y2),Max(y1,y2)};
-    float x = x1;
-    float y = y1;
+    float X[] = {Min(x1,x2),Max(x1,x2)}, Y[] ={(X[0] == x1 ? y1:y2),(X[0] == x1 ? y2:y1)};
+    float x = X[0];
+    float y = Y[0];
     float ret = 0;
     while(ret!=-1)
     {
-        ret = interp1((x1!=x2?X:Y),(x1!=x2?Y:X), 2, (x1!=x2?x:y),  (x1!=x2?&y:&x));
-        if(x<width && y < width && x > -1 && y > -1)
-            copy_pixel(&image[(int)(x+y*width)] , color);
+        x = ( x1 != x2 ? x + 1 : x);
         if(x1!=x2)
-            x = x + (x1<x2?1:-1);
+            ret = interp1(X,Y, 2, x,  &y);
         else
-            y = y + (y1<y2?1:-1);
+        {
+            y +=1;
+            ret = 0;
+            if(y>Y[1])
+                ret = -1;
+        }
+        if(x<width && y < width && x > -1 && y > -1)
+            copy_pixel(&image[(int)((int)x+(int)y*width)] , color);
     }
 }
 /*!
@@ -85,8 +90,9 @@ int main(void) {
     draw_line(image,width,height,10,10,width/2,10,&green);
 
     draw_line(image,width,height,190,180,30,40,&green);
-	
-	if(tga_write("C:\\Users\\55131\\Documents\\LTU Kurser\\D0017E\\Labb 3b\\Plot\\NovelLinesAndCircels.tga",width,height,image,24)!=TGA_OK) {
+
+    draw_line(image,width,height,190,180,280,80,&blue);
+    if(tga_write("C:\\Users\\55131\\Documents\\LTU Kurser\\D0017E\\Labb 3b\\Plot\\NovelLinesAndCircels.tga",width,height,image,24)!=TGA_OK) {
 		goto error_free;
 	}
 
