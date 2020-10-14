@@ -77,7 +77,8 @@ int tga_read(const char *file_name, int *width, int *height, PIXEL_RGB24 **pixel
 
     /* Check if image format is supported */
     if (head.xOffset != 0 ||
-        head.yOffset != 0 ) {
+        head.yOffset != 0||
+        (head.imageDescriptor && TGA_FLIP_MASK)!=0) {
         status = TGA_UNSUPPORTED_FORMAT;
         goto error;
     }

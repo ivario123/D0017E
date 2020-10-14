@@ -22,33 +22,32 @@
 #define Min(a,b) a>b?b:a
 /*!
  * Function that draws a line between two given points
- * @param image is the pixelpointer list that stores the rgb values
+ * @param image is the pixel pointer list that stores the rgb values
  * @param width is the width of the image
- * @param height is the height of the image, expects floats since interp1 expects floats
- * @param x1 is the x value of one of the endpoints
- * @param y1 is the y value of one of the endpoints
- * @param x2 is the x value of the other endpoint
- * @param y2 is the y value of the other endpoint
+ * @param height is the height of the image
+ * @param x1 is the x value of one of the endpoints, expects floats since interp1 expects floats
+ * @param y1 is the y value of one of the endpoints, expects floats since interp1 expects floats
+ * @param x2 is the x value of the other endpoint, expects floats since interp1 expects floats
+ * @param y2 is the y value of the other endpoint, expects floats since interp1 expects floats
  * @param color is the desired color of the line
  */
 void draw_line(PIXEL_RGB24 *image,int width,int height,float x1,float y1,float x2,float y2,PIXEL_RGB24 *color){
-    //Starts at smallest X if smallest x is not x1 then invert the Y list aswell
-    float X[] = { Min( x1 , x2 ) , Max( x1 , x2 ) }, Y[] ={ ( X[0] == x1 ? y1 : y2),( X[0] == x1 ? y2 : y1 ) };
-    //if x1 and x2 are identical i.e a vertical line then check if the y reorient the Y list to start at the smallest
-    //value
-    (x1 == x2 && y1 > y2) ? Y[0] = y2,Y[1] =y1:1;
-    //x and y are counters for the induvidual directions and ret is the place holder that checks if the coordinates are valid
+    //!Starts at smallest X if smallest x is not x1 then invert the Y list aswell
+    float X[] = { Min( x1 , x2 ) , Max( x1 , x2 ) }, Y[] = { ( X[0] == x1 ? y1 : y2),( X[0] == x1 ? y2 : y1 ) };
+    //!if x1 and x2 are identical i.e a vertical line then check if the y reorient the Y list to start at the smallest
+    //!value
+    (x1 == x2 && y1 > y2) ? Y[0] = y2 , Y[1] = y1 : 1;
+    //!x and y are counters for the individual directions and ret is the place holder that checks if the coordinates are valid
     float x = X[0], y = Y[0], ret = 0;
-    //While the coordinates are valid or we haven't reached the screen yet
-    while(ret!=-1 || (x||y)<0)
-    {
-        //check if the current coordinates are valid, if so then copy the color to that pixel
-        if(x<width && y < width && x > -1 && y > -1)
-            copy_pixel(&image[(int)((int)x+(int)y*width)] , color);
-        //if line is not horizontal then itterate x and interpolate the new y value
-        if (x1 != x2)
-            ret = interp1(X, Y, 2, x++, &y);
-        //otherwise itterate y until we have reached the endpoint of the line.
+    //!While the coordinates are valid or we haven't reached the screen yet
+    while(ret != -1 || (x || y)<0){
+        //!check if the current coordinates are valid, if so then copy the color to that pixel
+        if(x < width && y < width && x > -1 && y > -1)
+            copy_pixel(&image[ ( int ) ( ( int ) x + ( int ) y * width ) ] , color );
+        //!if line is not horizontal then iterate x and interpolate the new y value
+        if ( x1 != x2 )
+            ret = interp1( X, Y, 2, x++, &y );
+        //!otherwise iterate y until we have reached the endpoint of the line.
         else
             y++ > Y[1] ? ret = -1 : 0;
     }

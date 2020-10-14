@@ -30,7 +30,7 @@ enum TGA_TYPE {
     TGA_RLE_MONOCHROME = 11,
 
     /* Reversed ordering */
-    // Represents 48 which in ascii is 0
+    // Represents 48 which in ascii is '0'
     TGA_FLIP_MASK = 0x30
 };
 
@@ -45,7 +45,7 @@ enum TGA_STATUS {
     TGA_FILE_WRITE_FAILED,
     TGA_MALLOC_FAILED
 };
-//Alignment stufferoonies
+
 #pragma pack(1)
 
 /*!

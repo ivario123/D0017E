@@ -29,7 +29,9 @@ void mandelbrot_color(int x, int y, int width, int height, PIXEL_RGB24 *color, i
 	s *= 255.0/max_it;
 
 	/* Purple/magenta colors */
-	color->R = color->B = s; color->G = 0;
+	color->R = s;
+	color->B = s*.7;
+	color->G = s*.5;
 
 	/* Greyscale */
 	/*color->R = color->B = color->G = 255 - s;*/
@@ -43,7 +45,7 @@ int main(void) {
 	PIXEL_RGB24 *image = malloc(sizeof(PIXEL_RGB24)*1024*768), *color = malloc(sizeof(PIXEL_RGB24));
 	for(y = 0; y < height; ++y)
 	    for(x = 0; x<width; ++x) {
-            mandelbrot_color(x, y, width, height, color, 25);
+            mandelbrot_color(x, y, width, height, color, 40);
             copy_pixel(&(image[x + y * width]),color);
         }
 	//Complete this code so that the output TGA file gets some nice colors.
