@@ -13,18 +13,25 @@
 #define Min(a,b) a>b?b:a
 void draw_line(PIXEL_RGB24 *image,int width,int height,float x1,float y1,float x2,float y2,PIXEL_RGB24 *color)
 {
+    //Reorienting the direction of the line to start at the smallest value
     float X[] = {Min(x1,x2),Max(x1,x2)}, Y[] ={(X[0] == x1 ? y1:y2),(X[0] == x1 ? y2:y1)};
+    //Starting att the smallest value in the vector
     float x = X[0];
     float y = Y[0];
+    //Placeholder variable to make sure that a coordinate is valid
     float ret = 0;
+    //If coordinate is not valid break
     while(ret!=-1)
     {
+        //If dx = 0 then just keep the last x otherwise add 1 to x
         x = ( x1 != x2 ? x + 1 : x);
         if(x1!=x2)
             ret = interp1(X,Y, 2, x,  &y);
+        //Since I am basing every thing on itteration in X direction
+        // I need to have a special case for Y itteration where dx = 0
         else
         {
-            y +=1;
+            y += 1;
             ret = 0;
             if(y>Y[1])
                 ret = -1;
@@ -92,6 +99,8 @@ int main(void) {
     draw_line(image,width,height,190,180,30,40,&green);
 
     draw_line(image,width,height,190,180,280,80,&blue);
+
+    draw_line(image,width,height,190,80,280,120,&red);
     if(tga_write("C:\\Users\\55131\\Documents\\LTU Kurser\\D0017E\\Labb 3b\\Plot\\NovelLinesAndCircels.tga",width,height,image,24)!=TGA_OK) {
 		goto error_free;
 	}
