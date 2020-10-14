@@ -7,40 +7,54 @@
 #include "tga.h"
 #include <math.h>
 #include "interp1.h"
+
+/*!
+ * The Value of pi to some decimals
+ */
 #define M_PI 3.14159265358979323846
-
+/*!
+ *Macro that computes the maximum of to values
+ */
 #define Max(a,b) a>b?a:b
+/*!
+ *Macro that computes the minimum of to values
+ */
 #define Min(a,b) a>b?b:a
-void draw_line(PIXEL_RGB24 *image,int width,int height,float x1,float y1,float x2,float y2,PIXEL_RGB24 *color)
-{
-
-    //Reorienting the direction of the line to start at the smallest value
-    float X[] = {Min(x1,x2),Max(x1,x2)}, Y[] ={(X[0] == x1 ? y1:y2),(X[0] == x1 ? y2:y1)};
-    (x1 == x2 && y1 > y2) ? Y[0] = y2,Y[1] =y1 : 1;
-    //Starting att the smallest value in the vectors
-    //ret is the placeholder that checks for exeptions
+/*!
+ * Function that draws a line between two given points
+ * @param image is the pixelpointer list that stores the rgb values
+ * @param width is the width of the image
+ * @param height is the height of the image, expects floats since interp1 expects floats
+ * @param x1 is the x value of one of the endpoints
+ * @param y1 is the y value of one of the endpoints
+ * @param x2 is the x value of the other endpoint
+ * @param y2 is the y value of the other endpoint
+ * @param color is the desired color of the line
+ */
+void draw_line(PIXEL_RGB24 *image,int width,int height,float x1,float y1,float x2,float y2,PIXEL_RGB24 *color){
+    //Starts at smallest X if smallest x is not x1 then invert the Y list aswell
+    float X[] = { Min( x1 , x2 ) , Max( x1 , x2 ) }, Y[] ={ ( X[0] == x1 ? y1 : y2),( X[0] == x1 ? y2 : y1 ) };
+    //if x1 and x2 are identical i.e a vertical line then check if the y reorient the Y list to start at the smallest
+    //value
+    (x1 == x2 && y1 > y2) ? Y[0] = y2,Y[1] =y1:1;
+    //x and y are counters for the induvidual directions and ret is the place holder that checks if the coordinates are valid
     float x = X[0], y = Y[0], ret = 0;
-    //If coordinate is not valid break unless it is outside the screen then just continue untill we are on screen again
+    //While the coordinates are valid or we haven't reached the screen yet
     while(ret!=-1 || (x||y)<0)
     {
-
-        //if coordinates in image then draw else do big skip
+        //check if the current coordinates are valid, if so then copy the color to that pixel
         if(x<width && y < width && x > -1 && y > -1)
             copy_pixel(&image[(int)((int)x+(int)y*width)] , color);
-
-        //Since I am basing every thing on itteration in X direction
-        // I need to have a special case for Y itteration where dx = 0
-        if(x1==x2)
-            //Just itterate I untill reached the endpoint
-            y++>Y[1]?ret=-1:0;
+        //if line is not horizontal then itterate x and interpolate the new y value
+        if (x1 != x2)
+            ret = interp1(X, Y, 2, x++, &y);
+        //otherwise itterate y until we have reached the endpoint of the line.
         else
-            //If dx = 0 then just keep the last x otherwise add 1 to x
-            ret = interp1(X,Y, 2, x++,  &y);}
+            y++ > Y[1] ? ret = -1 : 0;
     }
 }
 /*!
 	Draw circle on image.
-
 	\param image Image buffer of size width*height.
 	\param width Width of image.
 	\param height Height of image.
