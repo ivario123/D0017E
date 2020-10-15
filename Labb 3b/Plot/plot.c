@@ -20,6 +20,19 @@
  *Macro that computes the minimum of to values
  */
 #define Min(a,b) a>b?b:a
+
+/*
+ * A way better way to do the line drawing is this
+    dx = x2 − x1
+    dy = y2 − y1
+
+    for x from x1 to x2 do
+        y = y1 + dy × (x − x1) / dx
+        plot(x, y)
+
+ * No need for linear interpolation, that's just a waste of compute.
+ * This would also save you time since you don't need to do type casting.
+ */
 /*!
  * Function that draws a line between two given points
  * @param image is the pixel pointer list that stores the rgb values
@@ -31,23 +44,25 @@
  * @param y2 is the y value of the other endpoint, expects floats since interp1 expects floats
  * @param color is the desired color of the line
  */
-void draw_line(PIXEL_RGB24 *image,int width,int height,float x1,float y1,float x2,float y2,PIXEL_RGB24 *color){
-    //!Starts at smallest X if smallest x is not x1 then invert the Y list aswell
+void draw_line(PIXEL_RGB24 *image,int width,int height,float x1,float y1,float x2,float y2, const PIXEL_RGB24 *color){
+    //Starts at smallest X if smallest x is not x1 then invert the Y list as well
+    // x1 = x2
+    // X[] = {x1,x1}
     float X[] = { Min( x1 , x2 ) , Max( x1 , x2 ) }, Y[] = { ( X[0] == x1 ? y1 : y2),( X[0] == x1 ? y2 : y1 ) };
-    //!if x1 and x2 are identical i.e a vertical line then check if the y reorient the Y list to start at the smallest
-    //!value
-    (x1 == x2 && y1 > y2) ? Y[0] = y2 , Y[1] = y1 : 1;
-    //!x and y are counters for the individual directions and ret is the place holder that checks if the coordinates are valid
+    //if x1 and x2 are identical i.e a vertical line then check if the y reorient the Y list to start at the smallest
+    //value
+    (x1 == x2 && y1 > y2) ? Y[0] = y2 , Y[1] = y1 : 0;
+    //x and y are counters for the individual directions and ret is the place holder that checks if the coordinates are valid
     float x = X[0], y = Y[0], ret = 0;
-    //!While the coordinates are valid or we haven't reached the screen yet
+    //While the coordinates are valid or we haven't reached the screen yet
     while(ret != -1 || (x || y)<0){
-        //!check if the current coordinates are valid, if so then copy the color to that pixel
-        if(x < width && y < width && x > -1 && y > -1)
-            copy_pixel(&image[ ( int ) ( ( int ) x + ( int ) y * width ) ] , color );
-        //!if line is not horizontal then iterate x and interpolate the new y value
+        //check if the current coordinates are valid, if so then copy the color to that pixel
+        if(x < width && y < height && x > -1 && y > -1)
+            copy_pixel(&image[ ( int ) x + ( int ) y * width ] , color );
+        //if line is not horizontal then iterate x and interpolate the new y value
         if ( x1 != x2 )
-            ret = interp1( X, Y, 2, x++, &y );
-        //!otherwise iterate y until we have reached the endpoint of the line.
+            ret = interp1( X, Y, 2, x+=0.0455, &y );
+        //otherwise iterate y until we have reached the endpoint of the line.
         else
             y++ > Y[1] ? ret = -1 : 0;
     }
@@ -100,17 +115,17 @@ int main(void) {
     draw_circle(image,width,height,width/2,height/2,120,&blue);
     draw_circle(image,width,height,width/2,height/2,240,&blue);
     draw_circle(image,width,height,width/2,height/2,20,&blue);
-
+    draw_circle(image,width,height,width/2,height/2,width/2,&red);
     /* Draw a few lines on the image */
-    draw_line(image,width,height,0,0,(float)width,(float)height,&red);       // Vertical
-    draw_line(image,width,height,0,(float)height,width,0,&red);       // Vertical
-    draw_line(image,width,height,256,236,256,136,&red);       // Vertical
-    draw_line(image,width,height,256,276,256,376,&red);       // Vertical
-    draw_line(image,width,height,276,256,376,256,&red);       // Vertical
-    draw_line(image,width,height,236,256,136,256,&red);       // Vertical
-    draw_line(image,width,height,50,136,462,136,&green);        // Horizontal
-    draw_line(image,width,height,50,136,256,495,&green);        // 45 degrees
-    draw_line(image,width,height,462,136,256,495,&green);        // 45 degrees
+    draw_line(image,width,height,0,0,(float)width,(float)height,&red);
+    draw_line(image,width,height,0,(float)height,width,0,&red);
+    draw_line(image,width,height,width/2,234,width/2,136,&red);
+    draw_line(image,width,height,width/2,276,width/2,373,&red);
+    draw_line(image,width,height,276,width/2,375,width/2,&red);
+    draw_line(image,width,height,236,width/2,137,width/2,&red);
+    draw_line(image,width,height,47,136,465,136,&green);
+    draw_line(image,width,height,47,136,width/2,495,&green);
+    draw_line(image,width,height,465,136,width/2,495,&green);
     if(tga_write("C:\\Users\\55131\\Documents\\LTU Kurser\\D0017E\\Labb 3b\\Plot\\NovelLinesAndCircels.tga",width,height,image,24)!=TGA_OK) {
 		goto error_free;
 	}

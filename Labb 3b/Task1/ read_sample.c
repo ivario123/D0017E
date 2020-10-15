@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 void main(){
-    int x, y,ret;
+    int x, y;
     x=128;
     y=128;
 

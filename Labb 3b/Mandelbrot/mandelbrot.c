@@ -40,8 +40,7 @@ void mandelbrot_color(int x, int y, int width, int height, PIXEL_RGB24 *color, i
 
 int main(void) {
 
-	int x,y;
-	int width=1024,height=768;
+	int x,y,width=1024,height=768;
 	PIXEL_RGB24 *image = malloc(sizeof(PIXEL_RGB24)*1024*768), *color = malloc(sizeof(PIXEL_RGB24));
 	for(y = 0; y < height; ++y)
 	    for(x = 0; x<width; ++x) {
@@ -54,7 +53,8 @@ int main(void) {
 	if(tga_write("mandelbrot.tga",width,height,image,24)!=TGA_OK) {
 		return -1; /* ERROR OCCURRED */
 	}
-	
+	//Removes image from heap
+	free(image);
 	return 0; /* OK */
 }
 
