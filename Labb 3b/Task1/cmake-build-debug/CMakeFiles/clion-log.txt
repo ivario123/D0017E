@@ -1,4 +1,1 @@
-C:\Users\55131\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.6948.80\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" "C:\Users\55131\Documents\LTU Kurser\D0017E\Labb 3b\Task1"
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/55131/Documents/LTU Kurser/D0017E/Labb 3b/Task1/cmake-build-debug
+CMakeLists.txt not found in C:\Users\55131\Documents\LTU Kurser\D0017E\Labb 3b\Task1 Select CMakeLists.txt file...

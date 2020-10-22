@@ -13,33 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="07b8eff1-c541-4410-8fa1-eea47a7732ba" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../Labb 1" beforeDir="false" afterPath="$PROJECT_DIR$/../../Labb 1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Gradient/cmake-build-debug/Gradient.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Gradient/cmake-build-debug/Gradient.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Gradient/cmake-build-debug/Gradient.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../Gradient/cmake-build-debug/Gradient.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Gradient/cmake-build-debug/Gradient.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Gradient/cmake-build-debug/Gradient.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Gradient/tga.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Gradient/tga.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Mandelbrot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Mandelbrot/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Mandelbrot/cmake-build-debug/CMakeFiles/Mandelbrot.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../Mandelbrot/cmake-build-debug/CMakeFiles/Mandelbrot.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Mandelbrot/cmake-build-debug/CMakeFiles/Mandelbrot.dir/mandelbrot.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../Mandelbrot/cmake-build-debug/CMakeFiles/Mandelbrot.dir/mandelbrot.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Mandelbrot/cmake-build-debug/CMakeFiles/Mandelbrot.dir/tga.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../Mandelbrot/cmake-build-debug/CMakeFiles/Mandelbrot.dir/tga.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Mandelbrot/cmake-build-debug/CMakeFiles/Mandelbrot.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Mandelbrot/cmake-build-debug/CMakeFiles/Mandelbrot.dir/vc140.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Mandelbrot/cmake-build-debug/Mandelbrot.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Mandelbrot/cmake-build-debug/Mandelbrot.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Mandelbrot/cmake-build-debug/Mandelbrot.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../Mandelbrot/cmake-build-debug/Mandelbrot.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Mandelbrot/cmake-build-debug/Mandelbrot.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Mandelbrot/cmake-build-debug/Mandelbrot.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Mandelbrot/mandelbrot.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Mandelbrot/mandelbrot.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NovelLinesAndCircels.tga" beforeDir="false" afterPath="$PROJECT_DIR$/NovelLinesAndCircels.tga" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Plot.dir/interp1.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Plot.dir/interp1.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Plot.dir/plot.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Plot.dir/plot.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Plot.dir/tga.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Plot.dir/tga.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Plot.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Plot.dir/vc140.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Plot.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Plot.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Plot.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Plot.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Plot.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Plot.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interp1.c" beforeDir="false" afterPath="$PROJECT_DIR$/interp1.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot.c" beforeDir="false" afterPath="$PROJECT_DIR$/plot.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tga.c" beforeDir="false" afterPath="$PROJECT_DIR$/tga.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task1/ read_sample.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Task1/ read_sample.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task1/tga.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Task1/tga.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +81,7 @@
       <workItem from="1602673945273" duration="2543000" />
       <workItem from="1602699657791" duration="643000" />
       <workItem from="1602742563865" duration="8352000" />
+      <workItem from="1602766924324" duration="809000" />
     </task>
     <servers />
   </component>
